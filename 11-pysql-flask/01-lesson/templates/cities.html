@@ -1,0 +1,20 @@
+<form action="/cities" method="get">
+  <label for="country">
+    Country code
+  </label>
+  <input id="country"
+         name="country"
+         value="{{ code }}"
+         maxlength="3" required>
+  <button type="submit">Search</button>
+</form>
+
+<h1>Cities in {{ code }}</h1>
+<ul>
+{% for name, population in rows %}
+  <li> {{ name }}: {{ population }}</li>
+{% else %}
+  <li>No cities found.</li>
+{% endfor %}
+</ul>
+<a href="/">Home</a>
