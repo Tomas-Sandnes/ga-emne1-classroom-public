@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>World explorer</title>
+</head>
+<body>
+
+<!-- Show data (if any) & show save button -->
+<form method="post" action="{{ '/edit/' ~ city_id if city_id else '/add' }}">
+  <label for="name">City name</label>
+  <input id="name" name="name" value="{{ name }}" maxlength="35" required>
+  <p><button type="submit">Save city</button></p>
+</form>
+
+<!-- If existing city, add delete button -->
+{% if city_id %}
+<form method="post" action="/delete/{{ city_id }}">
+  <button type="submit">Delete city</button>
+</form>
+{% endif %}
+
+<p><a href="/">Home</a></p>
+</body>
+</html>

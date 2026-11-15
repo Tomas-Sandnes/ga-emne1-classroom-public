@@ -3,7 +3,6 @@
 __pycache__/
 *.pyc
 
-/11-pysql-flask/01-lesson/config_local.py
-
+config_local.py
 # Shared template: do not ignore
 # config_local.py.example
